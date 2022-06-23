@@ -1,5 +1,6 @@
 import 'normalize.css'
 import './css/reset.css'
+import './assets/fonts/nickelodeon/nickelodeon.css'
 import './css/style.css'
 
 import { createApp } from 'vue'

@@ -1,5 +1,98 @@
+:root {
+  --color-primary: #4a962c;
+  --color-white: #ffffffc0;
+  --border-radius-card: 0.625rem;
+}
+
 body {
   height: 100vh;
   min-height: 100vh;
   width: 100%;
+}
+
+.hero {
+  align-items: center;
+  background-color: var(--color-primary);
+  display: flex;
+  height: 6.25rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.horo__logo {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  overflow: hidden;
+  width: 60%;
+}
+
+.horo__logo h3 {
+  color: var(--color-white);
+  font-family: nickelodeon, sans-serif;
+  font-size: 2.5rem;
+}
+
+.main {
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: repeat(4, 1fr);
+  height: calc(100vh - 6.25rem);
+  margin: 0.625rem auto;
+  width: 90%;
+}
+
+.card {
+  background-color: #c4c4c4;
+  -webkit-border-radius: var(--border-radius-card);
+  -moz-border-radius: var(--border-radius-card);
+  -ms-border-radius: var(--border-radius-card);
+  -o-border-radius: var(--border-radius-card);
+  border-radius: var(--border-radius-card);
+}
+
+.card__header {
+  align-items: center;
+  background-color: var(--color-primary);
+  -webkit-border-radius: var(--border-radius-card) var(--border-radius-card) 0 0;
+  -moz-border-radius: var(--border-radius-card) var(--border-radius-card) 0 0;
+  -ms-border-radius: var(--border-radius-card) var(--border-radius-card) 0 0;
+  -o-border-radius: var(--border-radius-card) var(--border-radius-card) 0 0;
+  border-radius: var(--border-radius-card) var(--border-radius-card) 0 0;
+  display: flex;
+  height: 20%;
+  justify-content: start;
+  width: 100%;
+}
+
+.card__title {
+  color: var(--color-white);
+  padding-left: 0.625rem;
+}
+
+.card__body {
+  background-color: var(--color-white);
+  -webkit-border-radius: 0 0;
+  -moz-border-radius: 0 0;
+  -ms-border-radius: 0 0;
+  -o-border-radius: 0 0;
+  border-radius: 0 0 var(--border-radius-card) var(--border-radius-card);
+  height: 80%;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    justify-content: start;
+  }
+  .horo__logo {
+    width: 30%;
+  }
+
+  .main {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 0.625rem 0;
+  }
 }

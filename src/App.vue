@@ -1,8 +1,11 @@
+<script setup lang="ts">
+import MainAppComponent from './components/app/MainAppComponent.vue'
+import HeaderUiComponent from './components/ui/HeaderUiComponent.vue'
+</script>
+
 <template>
-  <h1>hola mundo 1</h1>
-  <h2>hola mundo 2</h2>
-  <h3>hola mundo 3</h3>
-  <h4>hola mundo 4</h4>
-  <h5>hola mundo 5</h5>
-  <h6>hola mundo 6</h6>
+  <HeaderUiComponent />
+  <main class="main">
+    <MainAppComponent />
+  </main>
 </template>
