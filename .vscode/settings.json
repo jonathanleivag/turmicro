@@ -1,0 +1,51 @@
+{
+  "[typescript]": {
+    "editor.defaultFormatter": "numso.prettier-standard-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "numso.prettier-standard-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+  },
+  "[css]": {
+    "editor.defaultFormatter": "numso.prettier-standard-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "numso.prettier-standard-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+  },
+  "eslint.validate": [
+    "javascript",
+    "typescript"
+  ],
+  "cssrem.rootFontSize": 16,
+  "cssrem.fixedDigits": 3,
+  "html-css-class-completion.CSSLanguages": [
+    "css",
+    "sass",
+    "scss"
+  ],
+  "html-css-class-completion.enableEmmetSupport": true,
+  "html-css-class-completion.HTMLLanguages": [
+    "javascript",
+    "typescript",
+    "html",
+    "handlebars",
+    "markdown"
+  ],
+  "html-css-class-completion.includeGlobPattern": "**/*.{css,html,jsx,tsx}",
+  "html-css-class-completion.JavaScriptLanguages": [
+    "javascript",
+    "typescript"
+  ]
+}
