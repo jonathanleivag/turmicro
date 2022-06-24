@@ -3,5 +3,5 @@ import CardUiComponent from '../ui/CardUiComponent.vue'
 </script>
 
 <template>
-  <CardUiComponent title="Devolución" />
+  <CardUiComponent title="Puntos acomulados" />
 </template>
