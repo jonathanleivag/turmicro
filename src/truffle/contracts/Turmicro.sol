@@ -67,6 +67,18 @@ contract Turmicro {
         return _etherPuntos * cliente.puntos;
     }
 
+    function transferirPuntosEnEther() public {
+        Clientes storage cliente = _clientes[msg.sender];
+        uint256 calcularPuntos = _etherPuntos * cliente.puntos;
+
+        // no funciona transfer
+        // msg.sender.transfer(calcularPuntos);
+
+        // solución
+        payable(msg.sender).transfer(calcularPuntos);
+        cliente.puntos = 0;
+    }
+
     function getBalance() public view returns (uint256) {
         return address(this).balance;
     }
