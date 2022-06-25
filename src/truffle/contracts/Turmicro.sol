@@ -57,6 +57,10 @@ contract Turmicro {
         emit ViajesComprados(msg.sender, vieje.valor);
     }
 
+    function getTotalViajes() public view returns (uint256) {
+        return _viajes.length;
+    }
+
     function getBalance() public view returns (uint256) {
         return address(this).balance;
     }
