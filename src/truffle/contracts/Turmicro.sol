@@ -16,6 +16,7 @@ contract Turmicro {
     }
 
     Viaje[] public _viajes;
+    uint256 _etherPuntos = 0.5 ether;
 
     mapping(address => Clientes) public _clientes;
     mapping(address => Viaje[]) public _vieajesCliente;
@@ -59,6 +60,11 @@ contract Turmicro {
 
     function getTotalViajes() public view returns (uint256) {
         return _viajes.length;
+    }
+
+    function getPuntosEnEther() public view returns (uint256) {
+        Clientes memory cliente = _clientes[msg.sender];
+        return _etherPuntos * cliente.puntos;
     }
 
     function getBalance() public view returns (uint256) {
