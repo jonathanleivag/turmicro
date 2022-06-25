@@ -25,6 +25,20 @@ contract Turmicro {
 
     constructor() {
         _owner = msg.sender;
+
+        _viajes.push(Viaje("Santiago", 2 ether, 2));
+        _viajes.push(Viaje("Punta Arenas", 4 ether, 3));
+        _viajes.push(Viaje("Antofagasta", 5 ether, 4));
+        _viajes.push(Viaje("Puerto Montt", 2 ether, 2));
+        _viajes.push(Viaje("Iquique", 4 ether, 3));
+        _viajes.push(Viaje("Concepcion", 4 ether, 3));
+        _viajes.push(Viaje("Arica", 8 ether, 5));
+        _viajes.push(Viaje("Copiapo", 3 ether, 3));
+        _viajes.push(Viaje("Calama", 2 ether, 3));
+        _viajes.push(Viaje("Temuco", 2 ether, 3));
+        _viajes.push(Viaje("La serena", 3 ether, 4));
+        _viajes.push(Viaje("Valdivia", 4 ether, 4));
+        _viajes.push(Viaje("Osorno", 2 ether, 5));
     }
 
     function pagarViaje(uint256 indexVieje) public payable {
