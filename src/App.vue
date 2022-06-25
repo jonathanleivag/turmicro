@@ -5,7 +5,5 @@ import HeaderUiComponent from './components/ui/HeaderUiComponent.vue'
 
 <template>
   <HeaderUiComponent />
-  <main class="main">
-    <MainAppComponent />
-  </main>
+  <MainAppComponent />
 </template>

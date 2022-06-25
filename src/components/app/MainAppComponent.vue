@@ -1,32 +1,30 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import Web3 from 'web3'
 
-import { getWeb3 } from '../../utils'
+import { getWeb3, IWeb3 } from '../../utils'
 import BalanceAppComponent from './BalanceAppComponent.vue'
 import PuntosAcomuladosAppComponent from './PuntosAcomuladosAppComponent.vue'
 import TusViejesAppComponent from './TusViejesAppComponent.vue'
 import ViejesDisponiblesAppComponent from './ViejesDisponiblesAppComponent.vue'
 
-const web3 = ref<Web3 | boolean>()
+const web3 = ref<IWeb3>()
 
 onMounted(async () => {
   const verifiedWeb3 = await getWeb3()
-  try {
+
+  if (!verifiedWeb3.error) {
     web3.value = verifiedWeb3
-    console.log(await web3.value.eth.getAccounts())
-  } catch (error) {
-    web3.value = false
-    if (error instanceof Error) {
-      console.error(error.message)
-    }
+  } else {
+    console.error(verifiedWeb3.message)
   }
 })
 </script>
 
 <template>
-  <BalanceAppComponent />
-  <PuntosAcomuladosAppComponent />
-  <ViejesDisponiblesAppComponent />
-  <TusViejesAppComponent />
+  <main class="main">
+    <BalanceAppComponent />
+    <PuntosAcomuladosAppComponent />
+    <ViejesDisponiblesAppComponent />
+    <TusViejesAppComponent />
+  </main>
 </template>

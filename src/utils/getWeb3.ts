@@ -1,6 +1,6 @@
 import Web3 from 'web3/dist/web3.min.js'
 
-// deprecaded
+/* ------------------------------- deprecaded ------------------------------- */
 
 // export const getWeb3 = async (): Promise<Web3> => {
 //   let web3: Web3 = window.web3
@@ -15,14 +15,39 @@ import Web3 from 'web3/dist/web3.min.js'
 //   return web3
 // }
 
-export const getWeb3 = async (): Promise<Web3> => {
-  let web3: Web3 = window.web3
+/* ---------------------- problemas con test unitarios ---------------------- */
+// export const getWeb3 = async (): Promise<Web3> => {
+//   let web3: Web3 = window.web3
 
-  if (typeof web3 !== 'undefined') {
+//   if (typeof web3 !== 'undefined') {
+//     await window.ethereum.request({ method: 'eth_requestAccounts' })
+//     web3 = new Web3(window.ethereum)
+//   } else {
+//     throw new Error('No tienes instalado MetaMask')
+//   }
+//   return web3
+// }
+
+export interface IWeb3 {
+  web3?: Web3
+  error: boolean
+  message?: string
+}
+
+export const getWeb3 = async (): Promise<IWeb3> => {
+  const web3: IWeb3 = {
+    web3: undefined,
+    error: false,
+    message: undefined
+  }
+
+  if (typeof window.web3 !== 'undefined') {
     await window.ethereum.request({ method: 'eth_requestAccounts' })
-    web3 = new Web3(window.ethereum)
+    web3.web3 = new Web3(window.ethereum)
+    web3.error = false
   } else {
-    throw new Error('No tienes instalado MetaMask')
+    web3.error = true
+    web3.message = 'No tienes instalado MetaMask'
   }
   return web3
 }
