@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:truffle": "truffle test"
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
