@@ -19,6 +19,8 @@
     "cipchk.cssrem",
     "solnurkarim.html-to-css-autocompletion",
     "stylelint.vscode-stylelint",
-    "Vue.volar"
+    "Vue.volar",
+    "JuanBlanco.solidity",
+    "trufflesuite-csi.truffle-vscode"
   ]
 }

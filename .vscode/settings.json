@@ -24,8 +24,13 @@
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
   },
-  "[jsonc]" : {
-    "editor.defaultFormatter" : "vscode.json-language-features",
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+  },
+  "[solidity]": {
+    "editor.defaultFormatter": "JuanBlanco.solidity",
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
   },
