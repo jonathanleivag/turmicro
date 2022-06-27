@@ -36,9 +36,10 @@ onMounted(async () => {
     />
     <PuntosAcomuladosAppComponent />
     <ViejesDisponiblesAppComponent
-      v-if="deployContract && !web3?.error"
+      v-if="deployContract && !web3?.error && account"
       :deployContract="deployContract"
       :web3="web3?.web3!"
+      :account="account"
     />
     <TusViejesAppComponent />
   </main>

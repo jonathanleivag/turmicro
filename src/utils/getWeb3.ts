@@ -3,7 +3,7 @@ import contract from 'truffle-contract'
 import Web3 from 'web3/dist/web3.min.js'
 
 import turmicroContract from '../../build/contracts/Turmicro.json'
-import { Turmicro } from '../../build/contracts/ITurmicro'
+import { Turmicro } from '../interfaces/ITurmicro'
 
 /* ------------------------------- deprecaded ------------------------------- */
 
