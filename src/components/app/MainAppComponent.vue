@@ -41,6 +41,11 @@ onMounted(async () => {
       :web3="web3?.web3!"
       :account="account"
     />
-    <TusViejesAppComponent />
+    <TusViejesAppComponent
+      v-if="deployContract && !web3?.error && account"
+      :account="account"
+      :deployContract="deployContract"
+      :web3="web3?.web3!"
+    />
   </main>
 </template>

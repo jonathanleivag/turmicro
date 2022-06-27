@@ -95,6 +95,10 @@ body {
   width: 100%;
 }
 
+.card__list--cliente li {
+  width: 10.5rem;
+}
+
 .card__list li {
   background-color: var(--color-primary);
   -webkit-border-radius: 0.625rem;

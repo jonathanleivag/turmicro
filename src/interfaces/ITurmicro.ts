@@ -94,8 +94,8 @@ export interface _clientesResponse {
 }
 export interface _viajesResponse {
   nombre: string
-  valor: string
-  puntos: string
+  valor: number
+  puntos: number
 }
 export interface _vieajesClienteResponse {
   nombre: string
@@ -157,8 +157,8 @@ export interface Turmicro {
    */
   _vieajesCliente(
     parameter0: string,
-    parameter1: string
-  ): MethodConstantReturnContext<_vieajesClienteResponse>
+    parameter1: number
+  ): _vieajesClienteResponse
   /**
    * Payable: true
    * Constant: false
