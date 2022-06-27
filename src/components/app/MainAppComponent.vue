@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 
-import { Turmicro } from '../../../build/contracts/ITurmicro'
+import { Turmicro } from '../../interfaces/ITurmicro'
 import { getWeb3, interfaceContract, IWeb3 } from '../../utils'
 import BalanceAppComponent from './BalanceAppComponent.vue'
 import PuntosAcomuladosAppComponent from './PuntosAcomuladosAppComponent.vue'
