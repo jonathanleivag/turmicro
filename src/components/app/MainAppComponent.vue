@@ -1,19 +1,26 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 
-import { getWeb3, IWeb3 } from '../../utils'
+import { Turmicro } from '../../../build/contracts/ITurmicro'
+import { getWeb3, interfaceContract, IWeb3 } from '../../utils'
 import BalanceAppComponent from './BalanceAppComponent.vue'
 import PuntosAcomuladosAppComponent from './PuntosAcomuladosAppComponent.vue'
 import TusViejesAppComponent from './TusViejesAppComponent.vue'
 import ViejesDisponiblesAppComponent from './ViejesDisponiblesAppComponent.vue'
 
 const web3 = ref<IWeb3>()
+const deployContract = ref<Turmicro>()
+const account = ref<string>()
 
 onMounted(async () => {
   const verifiedWeb3 = await getWeb3()
 
   if (!verifiedWeb3.error) {
     web3.value = verifiedWeb3
+    deployContract.value = await interfaceContract(verifiedWeb3.web3!)
+    account.value = (
+      await web3.value.web3!.eth.getAccounts()
+    )[0].toLocaleLowerCase()
   } else {
     console.error(verifiedWeb3.message)
   }
@@ -22,7 +29,11 @@ onMounted(async () => {
 
 <template>
   <main class="main">
-    <BalanceAppComponent />
+    <BalanceAppComponent
+      v-if="!web3?.error && account"
+      :web3="web3?.web3!"
+      :account="account!"
+    />
     <PuntosAcomuladosAppComponent />
     <ViejesDisponiblesAppComponent />
     <TusViejesAppComponent />
