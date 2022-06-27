@@ -35,7 +35,11 @@ onMounted(async () => {
       :account="account!"
     />
     <PuntosAcomuladosAppComponent />
-    <ViejesDisponiblesAppComponent />
+    <ViejesDisponiblesAppComponent
+      v-if="deployContract && !web3?.error"
+      :deployContract="deployContract"
+      :web3="web3?.web3!"
+    />
     <TusViejesAppComponent />
   </main>
 </template>

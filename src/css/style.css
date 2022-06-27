@@ -50,6 +50,7 @@ body {
   -ms-border-radius: var(--border-radius-card);
   -o-border-radius: var(--border-radius-card);
   border-radius: var(--border-radius-card);
+  overflow: hidden;
 }
 
 .card__header {
@@ -79,8 +80,34 @@ body {
   -o-border-radius: 0 0;
   border-radius: 0 0 var(--border-radius-card) var(--border-radius-card);
   height: 80%;
+  overflow: scroll;
   padding: 0 0.625rem;
   width: 100%;
+}
+
+.card__list {
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  width: 100%;
+}
+
+.card__list li {
+  background-color: var(--color-primary);
+  -webkit-border-radius: 0.625rem;
+  -moz-border-radius: 0.625rem;
+  -ms-border-radius: 0.625rem;
+  -o-border-radius: 0.625rem;
+  border-radius: 0.625rem;
+  margin: 0.313rem;
+  padding: 0.313rem 0.438rem;
+}
+
+.card__list li span {
+  display: block;
 }
 
 .negrita {
