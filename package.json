@@ -12,9 +12,11 @@
     "migration:truffle": "truffle migrate --reset"
   },
   "dependencies": {
+    "@metamask/providers": "^9.0.0",
     "normalize.css": "^8.0.1",
     "truffle-contract": "^4.0.31",
     "vue": "^3.2.25",
+    "vuex": "^4.0.2",
     "web3": "^1.7.4"
   },
   "devDependencies": {

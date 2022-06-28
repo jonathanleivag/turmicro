@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { defineProps, onMounted, ref } from 'vue'
+import { defineProps, onMounted } from 'vue'
 import Web3 from 'web3/dist/web3.min.js'
 
-import { weiToEther } from '../../utils'
+import { useStore } from '../../store'
 import CardUiComponent from '../ui/CardUiComponent.vue'
 
 interface IProps {
@@ -10,23 +10,28 @@ interface IProps {
   account: string
 }
 
-const props = defineProps<IProps>()
+const store = useStore()
 
-const balance = ref<number>(0)
+const props = defineProps<IProps>()
 
 onMounted(() => {
   getBalance()
 })
 
 const getBalance = async () => {
-  const getBalanceResult = await props.web3.eth.getBalance(props.account)
-  balance.value = weiToEther(props.web3, +getBalanceResult)
+  store.dispatch('balance/changeBalance', {
+    web3: props.web3,
+    account: props.account
+  })
 }
 </script>
 
 <template>
   <CardUiComponent title="Balance">
     <p><span class="negrita">Cuenta</span>: {{ account }}</p>
-    <p><span class="negrita">Balance</span>: {{ balance }} ETH</p>
+    <p>
+      <span class="negrita">Balance</span>:
+      {{ store.state.balance.balance }} ETH
+    </p>
   </CardUiComponent>
 </template>

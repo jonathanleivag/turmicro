@@ -1,4 +1,4 @@
-/* eslint-disable */
+import { MetaMaskInpageProvider } from '@metamask/providers'
 import contract from 'truffle-contract'
 import Web3 from 'web3/dist/web3.min.js'
 
@@ -37,6 +37,7 @@ export interface IWeb3 {
   web3?: Web3
   error: boolean
   message?: string
+  ethereum?: MetaMaskInpageProvider
 }
 
 export const getWeb3 = async (): Promise<IWeb3> => {
@@ -50,6 +51,7 @@ export const getWeb3 = async (): Promise<IWeb3> => {
     await window.ethereum.request({ method: 'eth_requestAccounts' })
     web3.web3 = new Web3(window.ethereum)
     web3.error = false
+    web3.ethereum = window.ethereum
   } else {
     web3.error = true
     web3.message = 'No tienes instalado MetaMask'
