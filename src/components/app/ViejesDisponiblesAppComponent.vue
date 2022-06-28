@@ -3,6 +3,7 @@ import { defineProps, onMounted, ref } from 'vue'
 import Web3 from 'web3/dist/web3.min.js'
 
 import { Turmicro } from '../../interfaces/ITurmicro'
+import { useStore } from '../../store'
 import { weiToEther } from '../../utils'
 import CardUiComponent from '../ui/CardUiComponent.vue'
 
@@ -20,6 +21,7 @@ interface IPropsViajes {
 
 const props = defineProps<IProps>()
 const viajes = ref<IPropsViajes[]>([])
+const store = useStore()
 
 onMounted(() => {
   getViaje()
@@ -40,10 +42,21 @@ const getViaje = async () => {
   }
 }
 
-const comprar = async (indexViaje: number, value: number) => {
+const comprar = async (
+  indexViaje: number,
+  value: number,
+  name: string,
+  puntos: number
+) => {
   await props.deployContract.pagarViaje(indexViaje, {
     from: props.account,
     value
+  })
+
+  store.dispatch('tusViajes/setOneViaje', {
+    nombre: name,
+    valor: value,
+    puntos
   })
 }
 </script>
@@ -57,7 +70,7 @@ const comprar = async (indexViaje: number, value: number) => {
         <span>Puntos: {{ viaje.puntos }}</span>
         <div class="card__mantenedor_boton">
           <button
-            @click="comprar(index, viaje.price)"
+            @click="comprar(index, viaje.price, viaje.name, viaje.puntos)"
             typer="button"
             class="card__comprar"
           >

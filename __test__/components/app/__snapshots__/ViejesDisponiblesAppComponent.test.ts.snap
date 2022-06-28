@@ -5,6 +5,8 @@ exports[`ViejesDisponiblesAppComponent > Snapshot de ViejesDisponiblesAppCompone
   <div class=\\"card__header\\">
     <h3 class=\\"card__title\\">Viajes disponibles</h3>
   </div>
-  <div class=\\"card__body\\"></div>
+  <div class=\\"card__body\\">
+    <ul class=\\"card__list\\"></ul>
+  </div>
 </div>"
 `;
