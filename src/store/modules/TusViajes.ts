@@ -54,6 +54,27 @@ export const TusViajes: Module<IStateTusViajes, RootState> = {
           puntos: +payload.puntos
         }
       ])
+    },
+    async reset ({ commit, state }, payload: ISetViajes) {
+      commit('setViajes', [])
+      const totalViajes = +(await payload.deployContract._totalViajes(
+        payload.account
+      ))
+
+      for (let i = 0; i < totalViajes; i++) {
+        const viajeCliente = await payload.deployContract._vieajesCliente(
+          payload.account,
+          i
+        )
+        commit('setViajes', [
+          ...state.viajes,
+          {
+            nombre: viajeCliente.nombre,
+            valor: +viajeCliente.valor,
+            puntos: +viajeCliente.puntos
+          }
+        ])
+      }
     }
   }
 }

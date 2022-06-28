@@ -36,6 +36,11 @@ const updateCuenta = async () => {
       web3: web3.value?.web3,
       account: account.value
     })
+
+    store.dispatch('tusViajes/reset', {
+      deployContract: deployContract.value,
+      account: account.value
+    })
   })
 }
 </script>
