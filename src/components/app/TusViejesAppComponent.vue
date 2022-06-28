@@ -1,11 +1,9 @@
 <script setup lang="ts">
-/* eslint-disable */
 import { defineProps, onMounted, ref } from 'vue'
 import Web3 from 'web3/dist/web3.min.js'
 
 import { _viajesResponse, Turmicro } from '../../interfaces/ITurmicro'
 import CardUiComponent from '../ui/CardUiComponent.vue'
-import { weiToEther } from '../../utils'
 
 interface IProps {
   account: string
@@ -34,7 +32,6 @@ const getViajes = async () => {
       puntos: +viajeCliente.puntos
     })
   }
-  console.log(viajes.value)
 }
 </script>
 
