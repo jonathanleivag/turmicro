@@ -8,6 +8,7 @@ import { RootState } from '..'
 export interface IPuntosAcomulados {
   puntosAcomulados: number
   puntos: number
+  valorPunto: number
 }
 
 interface ISetPuntosAcomulados {
@@ -20,7 +21,8 @@ export const PuntosAcomulados: Module<IPuntosAcomulados, RootState> = {
   namespaced: true,
   state: () => ({
     puntosAcomulados: 0,
-    puntos: 0
+    puntos: 0,
+    valorPunto: 0
   }),
   mutations: {
     setPuntosAcomulados (state, puntosAcomulados) {
@@ -28,6 +30,9 @@ export const PuntosAcomulados: Module<IPuntosAcomulados, RootState> = {
     },
     setPuntos (state, puntos) {
       state.puntos = puntos
+    },
+    setValorPunto (state, valorPunto) {
+      state.valorPunto = valorPunto
     }
   },
   actions: {
@@ -37,6 +42,8 @@ export const PuntosAcomulados: Module<IPuntosAcomulados, RootState> = {
       commit('setPuntos', clientePuntos)
 
       const etherPuntos = +(await payload.deployContract._etherPuntos())
+      commit('setValorPunto', weiToEther(payload.web3, etherPuntos))
+
       const puntosEnWei = etherPuntos * clientePuntos
       const puntosEnEther = weiToEther(payload.web3, puntosEnWei)
       commit('setPuntosAcomulados', puntosEnEther)

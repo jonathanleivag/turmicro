@@ -35,6 +35,10 @@ const getPuntosEnEther = async () => {
       {{ store.state.puntosAcomulados.puntos }}
     </p>
     <p>
+      <span class="negrita">Valor Punto</span>:
+      {{ store.state.puntosAcomulados.valorPunto }} ETH
+    </p>
+    <p>
       <span class="negrita">Acomulado</span>:
       {{ store.state.puntosAcomulados.puntosAcomulados }} ETH
     </p>
