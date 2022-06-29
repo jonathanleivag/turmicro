@@ -58,6 +58,12 @@ const comprar = async (
     valor: value,
     puntos
   })
+
+  store.dispatch('puntosAcomulados/setPuntosAcomulados', {
+    deployContract: props.deployContract,
+    account: props.account,
+    web3: props.web3
+  })
 }
 </script>
 

@@ -41,6 +41,12 @@ const updateCuenta = async () => {
       deployContract: deployContract.value,
       account: account.value
     })
+
+    store.dispatch('puntosAcomulados/setPuntosAcomulados', {
+      deployContract: deployContract.value,
+      account: account.value,
+      web3: web3.value?.web3
+    })
   })
 }
 </script>
@@ -52,13 +58,21 @@ const updateCuenta = async () => {
       :web3="web3?.web3!"
       :account="account!"
     />
-    <PuntosAcomuladosAppComponent />
+
+    <PuntosAcomuladosAppComponent
+      v-if="deployContract && !web3?.error && account"
+      :account="account"
+      :deployContract="deployContract"
+      :web3="web3?.web3!"
+    />
+
     <ViejesDisponiblesAppComponent
       v-if="deployContract && !web3?.error && account"
       :deployContract="deployContract"
       :web3="web3?.web3!"
       :account="account"
     />
+
     <TusViejesAppComponent
       v-if="deployContract && !web3?.error && account"
       :account="account"

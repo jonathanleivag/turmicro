@@ -1,4 +1,4 @@
-/* eslint-disable  */
+/* eslint-disable */
 import BN from 'bn.js'
 import BigNumber from 'bignumber.js'
 import {
@@ -75,6 +75,7 @@ export interface TurmicroEventsContext {
 export type TurmicroMethodNames =
   | 'new'
   | '_clientes'
+  | '_etherPuntos'
   | '_owner'
   | '_totalViajes'
   | '_viajes'
@@ -123,7 +124,14 @@ export interface Turmicro {
    * Type: function
    * @param parameter0 Type: address, Indexed: false
    */
-  _clientes(parameter0: string): MethodConstantReturnContext<_clientesResponse>
+  _clientes(parameter0: string): _clientesResponse
+  /**
+   * Payable: false
+   * Constant: true
+   * StateMutability: view
+   * Type: function
+   */
+  _etherPuntos(): MethodConstantReturnContext<string>
   /**
    * Payable: false
    * Constant: true

@@ -16,7 +16,7 @@ contract Turmicro {
     }
 
     Viaje[] public _viajes;
-    uint256 _etherPuntos = 0.5 ether;
+    uint256 public _etherPuntos = 0.5 ether;
 
     mapping(address => Clientes) public _clientes;
     mapping(address => Viaje[]) public _vieajesCliente;
