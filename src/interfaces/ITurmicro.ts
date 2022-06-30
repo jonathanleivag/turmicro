@@ -109,6 +109,10 @@ interface IPagerValor {
   value: number
 }
 
+interface ITransferirPuntosEnEther {
+  from: string
+}
+
 export interface Turmicro {
   /**
    * Payable: false
@@ -198,7 +202,9 @@ export interface Turmicro {
    * StateMutability: nonpayable
    * Type: function
    */
-  transferirPuntosEnEther(): MethodReturnContext
+  transferirPuntosEnEther(
+    payload: ITransferirPuntosEnEther
+  ): MethodReturnContext
   /**
    * Payable: false
    * Constant: true

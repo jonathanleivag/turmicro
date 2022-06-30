@@ -1,6 +1,7 @@
 <script setup lang="ts">
 interface IProspCard {
   title: string
+  className?: string
 }
 
 defineProps<IProspCard>()

@@ -135,6 +135,14 @@ body {
   padding: 0.125rem 0.313rem;
 }
 
+.card__comprar--puntos {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: 1.125rem;
+  font-weight: bold;
+  padding: 0.313rem 0.625rem;
+}
+
 .negrita {
   font-weight: bold;
 }
