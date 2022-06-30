@@ -64,6 +64,11 @@ const comprar = async (
     account: props.account,
     web3: props.web3
   })
+
+  store.dispatch('balance/changeBalance', {
+    web3: props.web3,
+    account: props.account
+  })
 }
 </script>
 

@@ -30,6 +30,10 @@ const getPuntosEnEther = async () => {
 const canjearPuntos = async () => {
   await props.deployContract.transferirPuntosEnEther({ from: props.account })
   getPuntosEnEther()
+  store.dispatch('balance/changeBalance', {
+    web3: props.web3,
+    account: props.account
+  })
 }
 </script>
 
