@@ -53,7 +53,10 @@ const canjearPuntos = async () => {
         {{ store.state.puntosAcomulados.puntosAcomulados }} ETH
       </p>
     </div>
-    <div class="card__mantenedor_boton">
+    <div
+      class="card__mantenedor_boton"
+      v-if="store.state.puntosAcomulados.puntos > 0"
+    >
       <button
         @click="canjearPuntos"
         typer="button"
