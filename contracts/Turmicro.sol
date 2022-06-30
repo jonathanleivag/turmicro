@@ -22,8 +22,6 @@ contract Turmicro {
     mapping(address => Viaje[]) public _vieajesCliente;
     mapping(address => uint256) public _totalViajes;
 
-    event ViajesComprados(address indexed cliente, uint256 valor);
-
     constructor() {
         _owner = msg.sender;
 
@@ -54,8 +52,6 @@ contract Turmicro {
 
         _vieajesCliente[msg.sender].push(vieje);
         _totalViajes[msg.sender]++;
-
-        emit ViajesComprados(msg.sender, vieje.valor);
     }
 
     function getTotalViajes() public view returns (uint256) {
