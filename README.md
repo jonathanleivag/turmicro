@@ -4,7 +4,7 @@
 
 El objetivo de este proyecto es crear una aplicación web que permita la compra de viajes de Bus con criptomonedas (Basico).
 
-<img src="./img.png" />
+<img src="./imgs/img.png" />
 
 #### tecnologias utilizadas:
 
