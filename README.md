@@ -144,8 +144,6 @@ y importa la cuenta, repita con las otras cuentas de ganache, es opcional si qui
 >nota: Verifica que tienes seleccionada la red que creamos, para no tener problemas al importar las cuentas
 
 
-
-
 - Ahora descarga el proyecto TURMICRO
 
 ````
@@ -162,6 +160,12 @@ yarn dev o npm run dev
 ````
 
 -  y listo para usar la aplicación
+
+# test
+
+```
+  yarn test:truffle o npm run test:truffle
+```
 
 # License
 
